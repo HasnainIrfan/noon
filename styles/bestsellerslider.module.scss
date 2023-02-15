@@ -1,0 +1,147 @@
+// background-color: rgb(241, 244, 253);
+@import "./mixin.module.scss";
+@import "./partials.scss";
+.BestSellerSlider {
+  width: 100%;
+  background-color: $gray;
+  .BestSellerSlider_wrapper {
+    @include maxWidth;
+    background-color: $gray;
+    max-width: 1440px;
+    white-space: nowrap;
+    .BestSeller_heading {
+      padding: 10px 5px 0px;
+      overflow: hidden;
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-left: 10px;
+      }
+      @media screen and (max-width:400px) {
+        h1{
+          font-size: 1.2rem;
+          white-space: pre-wrap;
+        }
+        
+      }
+    }
+    .mySwiper {
+      padding: 20px 12px 40px 10px;
+      cursor: grab;
+    }
+    .BestSellerBox {
+      width: 220px;
+      min-height: 400px;
+      cursor: grab;
+      user-select: none;
+      background-color: $white;
+      padding: 10px;
+      overflow: hidden;
+      transition: 0.3s ;
+      &:hover{
+        transform: scale(1.05);
+      }
+      .BestSellerBox_image {
+        position: relative;
+        width: 100%;
+        height: 250px;
+        margin-bottom: 3px;
+        background-color: $gray;
+        .bestsell {
+          position: absolute;
+          top: 6px;
+          left: 6px;
+          background-color: rgb(64, 69, 83);
+          padding: 12px 6px;
+          width: 85px;
+          height: 20px;
+          @include allCenter;
+          border-radius: 12px;
+          span {
+            color: $white;
+            font-size: 0.8rem;
+            font-weight: 500;
+            white-space: nowrap;
+          }
+        }
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .BestSellerBox_title {
+        width: 100%;
+        white-space: nowrap;
+        margin-bottom: 10px;
+        span {
+          font-size: 0.9rem;
+        }
+        p {
+          font-size: 0.9rem;
+        }
+      }
+      .BestSellerBox_subtitle {
+        margin-bottom: 12px;
+        h4 {
+          font-size: 12px;
+          font-weight: 500;
+          span {
+            font-size: 1.2rem;
+            margin-left: 3px;
+            font-weight: 600;
+          }
+        }
+        div {
+          @include verticallycenter;
+          h6 {
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: line-through;
+          }
+          span {
+            text-decoration: none;
+            color: green;
+            font-size: 12px;
+            margin-left: 6px;
+            font-weight: 600;
+          }
+        }
+      }
+      .BestSellerBox_action {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .BestSellerBox_left {
+          position: relative;
+          @include verticallycenter;
+        }
+        .BestSellerBox_right {
+          @include verticallycenter;
+          h4 {
+            @include verticallycenter;
+            background-color: rgb(130, 174, 4);
+            font-size: 14px;
+            height: 18px;
+            padding: 4px;
+            border-radius: 999px;
+            gap: 2px;
+            align-items: center;
+            justify-content: center;
+            color: $white;
+            font-weight: 500;
+            svg {
+              color: $white;
+            }
+          }
+          span {
+            margin-left: 6px;
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}

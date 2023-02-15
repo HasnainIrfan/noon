@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  bottom: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+.swiper-pagination,
+  .swiper-pagination-progressbar,
+  .swiper-pagination-horizontal {
+    left: 45% !important;
+    width: 10% !important;
+    bottom: 10px !important;
+    top: initial !important;
+}

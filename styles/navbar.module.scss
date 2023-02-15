@@ -1,0 +1,333 @@
+@import "./mixin.module.scss";
+@import "./partials.scss";
+
+.header {
+  position: relative;
+  white-space: nowrap;
+  .navbar {
+    width: 100%;
+    background-color: $primary-color;
+    overflow: hidden;
+    .navbar_wrapper {
+      @include maxWidth;
+      background-color: $primary-color;
+      @include verticallycenter;
+      gap: 20px;
+      min-height: 65px;
+      max-height: 100%;
+      overflow: hidden;
+      .navbar_left {
+        flex: 0.75;
+        @include verticallycenter;
+        gap: 20px;
+        .navbar_logo {
+          width: 100px;
+          height: 24px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .navbar_location {
+          @include verticallycenter;
+          gap: 10px;
+          cursor: pointer;
+          transition: 0.1s;
+          .navbar_location_left {
+            @include verticallycenter;
+            gap: 10px;
+            .flag {
+              width: 30px;
+              height: 20px;
+              border-radius: 3px;
+              overflow: hidden;
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+            .dec {
+              span {
+                font-size: 0.9rem;
+                white-space: nowrap;
+              }
+              h4 {
+                font-size: 0.9rem;
+              }
+            }
+          }
+          .navbar_location_right {
+            svg {
+              font-size: 1.6rem;
+              color: #666;
+            }
+          }
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+        @media screen and (max-width: 720px) {
+          .navbar_location {
+            display: none;
+          }
+        }
+        @media screen and (max-width: 500px) {
+          display: none;
+        }
+      }
+      .navbar_center {
+        flex: 2.5;
+        .navbar_seacrh {
+          width: 100%;
+          input {
+            width: 100%;
+            @include input(8px 10px);
+            border-radius: 6px;
+            border: none;
+            background-color: $white;
+            font-family: "Poppins", sans-serif;
+          }
+        }
+      }
+      .navbar_right {
+        flex: 0.75;
+        @include verticallycenter;
+        gap: 20px;
+        .navbar_language {
+          cursor: pointer;
+          span {
+            font-size: 0.9rem;
+            font-weight: 500;
+          }
+        }
+        .navbar_signIn {
+          border-left: 0.1px solid rgba(0, 0, 0, 0.1);
+          padding: 0px 10px;
+          border-right: 0.1px solid rgba(0, 0, 0, 0.1);
+          @include verticallycenter;
+          h3 {
+            @include verticallycenter;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: $black;
+            transition: 0.1s;
+            span {
+              margin-left: 8px;
+              @include allCenter;
+              svg {
+                font-size: 1.2rem;
+                color: #666;
+              }
+            }
+            &:hover {
+              opacity: 0.5;
+            }
+          }
+        }
+        .navbar_cart {
+          cursor: pointer;
+          transition: 0.1s;
+          h3 {
+            @include verticallycenter;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: $black;
+            span {
+              margin-left: 8px;
+              svg {
+                font-size: 1rem;
+                color: #666;
+              }
+            }
+          }
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+
+        @media screen and (max-width: 720px) {
+          .navbar_language {
+            display: none;
+          }
+        }
+      }
+      @media screen and (max-width: 350px) {
+        flex-direction: column;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        .navbar_center,
+        .navbar_right {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .subHeader {
+    width: 100%;
+    background: rgb(252, 251, 244);
+    border-bottom: 1px solid rgb(226, 229, 241);
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+
+    .subHeader_wrapper {
+      @include maxWidth;
+      @include verticallycenter;
+      min-height: 44px;
+      .subHeader_left {
+        flex: 0.5;
+        cursor: pointer;
+        border-right: 0.1px solid rgba(0, 0, 0, 0.1);
+        h1 {
+          white-space: nowrap;
+          @include verticallycenter;
+          gap: 50px;
+          font-size: 0.9rem;
+          padding: 10px;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: $blue;
+          span {
+            @include allCenter;
+            svg {
+              font-size: 1.5rem;
+            }
+          }
+        }
+        
+      }
+      .subHeader_center {
+        flex: 3;
+        .menu {
+          width: 100%;
+          ul {
+            @include verticallycenter;
+            justify-content: left;
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+
+            li {
+              padding: 11px 20px;
+              font-size: 0.9rem;
+              color: $black;
+              font-weight: 600;
+              text-transform: uppercase;
+              cursor: pointer;
+              transform: 0.1s;
+              &:hover {
+                background-color: $white;
+                box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+              }
+            }
+          }
+        }
+      }
+      .subHeader_right {
+        flex: 0.4;
+        display: flex;
+        .subHeader_logo {
+          width: 110px;
+          height: 22px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+.navbar_Responsive {
+  background-color: $primary-color;
+  margin-left: 30px;
+  padding-top: 5px;
+  display: none;
+  .navbar_Responsive_wrapper {
+    @include verticallycenter;
+    gap: 20px;
+    .navbar_logo {
+      width: 100px;
+      height: 24px;
+      display: none;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .navbar_location {
+      @include verticallycenter;
+      gap: 10px;
+      cursor: pointer;
+      transition: 0.1s;
+      .navbar_location_left {
+        @include verticallycenter;
+        gap: 10px;
+        .flag {
+          width: 30px;
+          height: 20px;
+          border-radius: 3px;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .dec {
+          span {
+            font-size: 0.9rem;
+            white-space: nowrap;
+          }
+          h4 {
+            font-size: 0.9rem;
+          }
+        }
+      }
+      .navbar_location_right {
+        svg {
+          font-size: 1.6rem;
+          color: #666;
+        }
+      }
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+    .navbar_language {
+      cursor: pointer;
+      span {
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      .navbar_logo {
+        display: block;
+      }
+    }
+  }
+  @media screen and (max-width: 720px) {
+    display: block;
+  }
+}
+.subMenu {
+  position: absolute;
+  top: 110px;
+  left: 0;
+  height: 400px;
+  z-index: 99;
+  width: 100%;
+  display: none;
+  .subMenu_wrapper {
+    @include maxWidth;
+    padding: 0;
+    height: 100%;
+    .subMenu_Box {
+      width: 225px;
+      height: 100%;
+      background-color: $primary-color;
+    }
+  }
+}
